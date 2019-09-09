@@ -1,4 +1,4 @@
-FROM ligo/software:jessie
+FROM containers.ligo.org/docker/software:stretch
 
 RUN adduser --quiet --system --no-create-home --home /var/run/sshd --shell /usr/sbin/nologin sshd
 
