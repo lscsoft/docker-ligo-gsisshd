@@ -1,5 +1,10 @@
 FROM containers.ligo.org/docker/software:buster
 
+LABEL name="LIGO gsissh server for Debian buster" \
+      maintainer="Shawn Kwang <shawn.kwang@ligo.org>" \
+      date="20190918" \
+      support="Reference Platform"
+
 RUN adduser --quiet --system --no-create-home --home /var/run/sshd --shell /usr/sbin/nologin sshd
 
 COPY /environment/bash/ligo.sh /etc/profile.d/ligo.sh
