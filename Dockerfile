@@ -1,4 +1,4 @@
-FROM containers.ligo.org/docker/software:stretch
+FROM containers.ligo.org/docker/software:buster
 
 RUN adduser --quiet --system --no-create-home --home /var/run/sshd --shell /usr/sbin/nologin sshd
 
