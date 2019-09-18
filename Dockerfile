@@ -12,7 +12,10 @@ RUN apt-get update && \
       cvmfs-x509-helper \
       emacs-nox \
       ldg-client \
-      ldg-server \
+      ldg-core \
+      globus-gridftp-server-progs \
+      gsi-openssh-server \
+      ligo-grid-mapfile-manager \
       sshfs \
       sudo \
       vim && \
