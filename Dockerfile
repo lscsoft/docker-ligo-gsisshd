@@ -1,6 +1,6 @@
-FROM containers.ligo.org/docker/software:stretch
+FROM containers.ligo.org/docker/software:el7
 
-LABEL name="LIGO gsissh server for Debian stretch" \
+LABEL name="LIGO gsissh server for Enterprise Linux 7" \
       maintainer="Shawn Kwang <shawn.kwang@ligo.org>" \
       date="20190918" \
       support="Reference Platform"
@@ -11,18 +11,16 @@ COPY /environment/bash/ligo.sh /etc/profile.d/ligo.sh
 COPY /entrypoint/startup /usr/local/bin/startup
 RUN chmod 0755 /usr/local/bin/startup
 
-RUN apt-get update && \
-    apt-get install --assume-yes \
+RUN yum -y install \
       cvmfs \
       cvmfs-x509-helper \
-      emacs-nox \
       ldg-client \
-      ldg-server \
-      sshfs \
+      gsi-openssh-server \
+      ligo-grid-mapfile-manager \
+      globus-gridftp-server \
       sudo \
       vim && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    yum clean all
 
 RUN gsissh-keygen -A
 
