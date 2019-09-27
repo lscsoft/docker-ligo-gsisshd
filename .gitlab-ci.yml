@@ -2,7 +2,7 @@
 image: docker:latest
 
 variables:
-  REPOSITORY: 'cgca/ligo-gsisshd'
+  REPOSITORY: 'igwn/ligo-gsisshd'
 
 stages:
   - docker
