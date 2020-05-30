@@ -1,7 +1,7 @@
 FROM igwn/software:el7
 
 LABEL name="LIGO gsissh server for Enterprise Linux 7" \
-      maintainer="Shawn Kwang <shawn.kwang@ligo.org>" \
+      maintainer="Adam Mercer <adam.mercer@ligo.org>" \
       support="Reference Platform"
 
 COPY /environment/bash/ligo.sh /etc/profile.d/ligo.sh
